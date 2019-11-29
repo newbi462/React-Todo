@@ -27,6 +27,17 @@ class App extends React.Component {
   markDone = (index) => {
     this.setState({void: [...this.state.void, index]});
   };
+  saveRemove = event => {
+    for (let i = 0; i < this.state.void.length; i++) {
+      console.log(this.state.list[this.state.void[i]]);
+      this.state.list.splice(this.state.void[i], 1, "ITEMDONE");
+      console.log(this.state.list[this.state.void[i]]);
+    };
+    const result = this.state.list.filter(undone => undone != "ITEMDONE");
+    console.log(result);
+    this.setState({list: [...result]});
+    this.setState({void: []});
+  };
 
 
   render() {
@@ -36,22 +47,23 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
 
         <ul>
-        {this.state.list.map(function(item, index) {
+        {this.state.list.map(function(item, index ) {
           return (
             <>
             <li key={index} className={index}>{item}</li>
-            <button onClick={() => this.markDone(index)}>Add to List</button>
+            <button onClick={() => this.markDone(index)}>Button 3</button>
             </>
           );
-        })}
+        }.bind( this )  )}{/*need to BIND(this) for it to have conexest in this map*/}
         {this.state.typing[0]}
         </ul>
 
         {this.state.placeHolder}
         <button onClick={this.newListItem}>Add to List</button>
-        <button onClick={() => this.markDone(2)}>Done</button>
+        <button onClick={this.saveRemove}>Save Remove</button>
       </div>
       {console.log(this.state.void)}
+      {console.log(this.state.list)}
       </>
     );
   }
