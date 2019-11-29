@@ -1,0 +1,49 @@
+@import 'SASS/Reset';
+@import 'SASS/W3css';
+//DOCS: https://www.w3schools.com/w3css/w3css_animate.asp
+@import 'SASS/W3cssReverse';
+
+
+// Global Rulles
+.mainBox {
+  width:65%;
+  margin: 8px auto;
+  border: 3px solid black;
+  border-radius: 42px;
+  h2 {
+    margin: 0.25em 0em;
+    font-size: 2rem;
+    text-align: center;
+
+  }
+}
+
+.flexMeList {
+  display: flex;
+  flex-flow: column;
+  width: 85%;
+  margin: 2px auto;
+  li{
+    border-bottom: 1px solid darkgray;
+    width: 100%;
+  }
+}
+.toggleHide {
+  display: none;
+//  z-index: 900;
+//  width: 100%;
+//  border-top: solid 1px $mainColor;
+//  position: fixed;
+//  bottom: -10000px;
+//  padding-bottom: 65px;
+}
+
+.flexMeButtons {
+  display: flex;
+  flex-flow: column;
+  width: 75%;
+  margin: 8px auto;
+  p {
+    text-align: center;
+  }
+}
