@@ -7,8 +7,11 @@
 // Global Rulles
 .mainBox {
   width:65%;
-  margin: 8px auto;
-  border: 3px solid black;
+  //height: 94vh;
+  margin: 2% auto;
+  border-top: 3px solid black;
+  border-left:: 3px solid black;
+  border-right: 3px solid black;
   border-radius: 42px;
   h2 {
     margin: 0.25em 0em;
@@ -23,6 +26,7 @@
   flex-flow: column;
   width: 85%;
   margin: 2px auto;
+  padding-bottom: 120px;
   li{
     border-bottom: 1px solid darkgray;
     width: 100%;
@@ -41,8 +45,13 @@
 .flexMeButtons {
   display: flex;
   flex-flow: column;
-  width: 75%;
+  width: 65%;
   margin: 8px auto;
+  border-bottom: 3px solid black;
+  border-radius: 42px;
+  padding: 4px 13%;
+  position: relative;
+  bottom: 125px;
   p {
     text-align: center;
   }

@@ -24,7 +24,11 @@ class App extends React.Component {
   newListItem = foobarBannaEvent => {
     this.setState({list: [...this.state.list, {todo: this.state.typing[0], style: "show",}]});
     this.setState({typing: []});
-    this.setState({placeHolder: <input placeholder="New List Item" onChange={this.typeListItem} />});
+    this.setState({placeHolder: <input placeholder="New List Item" value="" onChange={this.typeListItem} />});
+    setTimeout(() => {
+      this.setState({placeHolder: <input placeholder="New List Item" onChange={this.typeListItem} />});
+      console.log("I ran");
+    }, 75);// slopy way to fix value to reset... 
   };
   markDone = (index) => {
     this.setState({void: [...this.state.void, index]});
@@ -70,14 +74,17 @@ class App extends React.Component {
           <li>{this.state.typing[0]}</li>
           <li>&nbsp;</li>
           <li>&nbsp;</li>
+          <li>&nbsp;</li>
+
         </ul>
 
-        <div className="flexMeButtons">
-          {this.state.placeHolder}
-          <button onClick={this.newListItem}>Add to List</button>
-          {/*<button onClick={this.saveRemove}>Save Remove</button>*/}
-          <p>Tap list item to mark done</p>
-        </div>
+
+      </div>
+      <div className="flexMeButtons">
+        {this.state.placeHolder}
+        <button onClick={this.newListItem}>Add to List</button>
+        {/*<button onClick={this.saveRemove}>Save Remove</button>*/}
+        <p>Tap list item to mark done</p>
       </div>
       {console.log(this.state.void)}
       {console.log(this.state.list)}
